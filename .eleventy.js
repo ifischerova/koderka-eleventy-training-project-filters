@@ -11,6 +11,14 @@ module.exports = function(eleventyConfig) {
 	// Zkopírovat všechny *.js soubory na stejné umístění do _site
 	// eleventyConfig.addPassthroughCopy("**/*.js");
 
+  // Filtr, ktery omezi pocet zobrazovanych blogovych prispevku. 
+  // Neni vestaveny v eleventy, musim si ho "napsat".
+  // po takovem zasahu do konfigurace je treba eleventy otocit.
+  eleventyConfig.addFilter("limit", function (arr, limit) {
+    return arr.slice(0, limit);
+  });
+
+
   return {
     // možné formáty šablon
     templateFormats: ["njk", "html", "md", "liquid"],
