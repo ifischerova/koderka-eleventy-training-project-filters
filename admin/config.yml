@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+media-folder: "images/uploads"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
+    # timto umoznim uzivateli pridavat nove clanky na blog
+    create: true
+    # adresa na dany clanek se bude generovat z nazvu clanku
+    slug: "{{slug}}"
+    # zadavam vsechna pole, ktera chci mit v administraci dostupna
+    fields:
+    # label = jak se jmenuje v administraci
+    # name = kam se hodnota z pole doplni v ramci frontmatteru v sablone
+    # widget = datovy format pole
+    # default = vychozi hodnota pole
+    # required: false = nepovinne pole
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layouts/clanek.njk"}
+      - {label: "Tags", name: "tags", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date of publishing", name: "date", widget: "datetime"}
+      - {label: "Picture", name: "foto", widget: "image", required: false}
+      - {label: "Perex", name: "perex", widget: "string"}
+      # Tatot posledni cast je samotny blogovy prispevek, name musi byt vzdycky body a byt v md formatu.
+      - {label: "Content", name: "body", widget: "markdown"}
