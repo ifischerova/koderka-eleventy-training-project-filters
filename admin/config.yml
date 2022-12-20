@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   branch: main
 media_folder: "images/uploads"
+slug:
+  encoding: "ascii"
+  clean_accents: true
 collections:
   - name: "blog"
     label: "Blog"
@@ -23,5 +26,5 @@ collections:
       - {label: "Date of publishing", name: "date", widget: "datetime"}
       - {label: "Picture", name: "foto", widget: "image", required: false}
       - {label: "Perex", name: "perex", widget: "string"}
-      # Tatot posledni cast je samotny blogovy prispevek, name musi byt vzdycky body a byt v md formatu.
+      # Tato posledni cast je samotny blogovy prispevek, name musi byt vzdycky body a byt v md formatu.
       - {label: "Content", name: "body", widget: "markdown"}
