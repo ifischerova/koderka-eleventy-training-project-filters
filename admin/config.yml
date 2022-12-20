@@ -12,7 +12,7 @@ collections:
     slug: "{{slug}}"
     # zadavam vsechna pole, ktera chci mit v administraci dostupna
     fields:
-    # label = jak se jmenuje v administraci
+    # label = jak se jmenuje pole v administraci
     # name = kam se hodnota z pole doplni v ramci frontmatteru v sablone
     # widget = datovy format pole
     # default = vychozi hodnota pole
